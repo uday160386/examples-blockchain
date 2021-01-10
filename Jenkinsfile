@@ -8,7 +8,7 @@ node ('master') {
         app = docker.build("venmaum/expblock")
     }
     stage('Post-to-dockerhub') {
-        docker.withRegistry('https://registry.hub.docker.com','dockerhub'){
+        docker.withRegistry('https://registry.hub.docker.com','Docker_credentials'){
             app.push("latest")
         }
     }
