@@ -1,6 +1,7 @@
 FROM python:3.7-alpine
-WORKDIR /blockchain
-ENV FLASK_APP=blockchain.py
+WORKDIR /experience-blockchain
+ENV FLASK_ENV=development
+ENV FLASK_APP="/blockchain/app/__init__.py"
 ENV FLASK_RUN_HOST=0.0.0.0
 RUN apk add --no-cache gcc musl-dev linux-headers
 COPY requirements.txt requirements.txt
