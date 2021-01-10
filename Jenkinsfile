@@ -11,7 +11,6 @@ node ('master') {
         /*docker.withRegistry('https://registry.hub.docker.com','dockerhub'){
             app.push("latest")*/
         }
-    }
     stage('Pull-image-server') {
         /*sh "docker-compose down"
         sh "docker-compose up -d" */
