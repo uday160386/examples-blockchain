@@ -1,5 +1,5 @@
 node ('master') {
-    //def app
+    def app
     stage('cloning git') {
         checkout scm
     }
@@ -8,11 +8,11 @@ node ('master') {
         app = docker.build("venmaum/expblock")
     }
     stage('Post-to-dockerhub') {
-        /*docker.withRegistry('https://registry.hub.docker.com','dockerhub'){
-            app.push("latest")*/
+        docker.withRegistry('https://registry.hub.docker.com','dockerhub'){
+            app.push("latest")
         }
     stage('Pull-image-server') {
-        /*sh "docker-compose down"
-        sh "docker-compose up -d" */
+        sh "docker-compose down"
+        sh "docker-compose up -d"
     }
 }
