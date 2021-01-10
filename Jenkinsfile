@@ -12,8 +12,11 @@ node ('master') {
             app.push("latest")
         }
     }
+   environment {
+        PATH = "$PATH:/usr/bin"
+    }
     stage('Pull-image-server') {
-        sh "/usr/bin/docker-compose down"
-        sh "/usr/bin/docker-compose up -d"
+        sh "docker-compose down"
+        sh "docker-compose up -d"
     }
 }
