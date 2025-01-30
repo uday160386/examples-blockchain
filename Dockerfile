@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.14.0a4-alpine
 WORKDIR /experience-blockchain
 ENV FLASK_ENV=development
 ENV FLASK_APP="/blockchain/app/__init__.py"
